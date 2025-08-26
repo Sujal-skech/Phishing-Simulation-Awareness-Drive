@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Win a Laptop or ₹10,000 Cash!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      body {
+  background: url('https://imgs.search.brave.com/fDhNSEkWbeNVBhd5ysIACLc3wMamsn3JOtl13uqzH8Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cmFrZWJhY2suY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDI1/LzA1L1NjcmVlbnNo/b3QtMjAyNS0wNS0w/NC1hdC0xMi41NS4w/OCVFMiU4MCVBRlBN/LTEtc2NhbGVkLmpw/Zw') no-repeat center center fixed;
+  background-size: cover;
+}
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.75);
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #f1c40f;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #f39c12;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #e67e22;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #ccc;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #fff;
+      color: #333;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 300px;
+    }
+
+    .modal-content h3 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="title">🎉 Win a Laptop or ₹10,000 Cash!</div>
+    <div class="subtitle">Complete the form and solve the puzzle to enter.</div>
+    <form onsubmit="simulateEntry(); return false;">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <select required>
+        <option value="">Choose Your Reward</option>
+        <option value="laptop">Laptop</option>
+        <option value="cash">₹10,000 Cash</option>
+      </select>
+      <label for="puzzle">🧠 What is 7 + 5?</label>
+      <input type="text" id="puzzle" placeholder="Enter answer" required>
+      <button type="submit">Enter Giveaway</button>
+    </form>
+    <div class="footer">
+      🔒 This is a simulation for educational purposes only.
+    </div>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h3>Simulation Complete</h3>
+      <p>This was a phishing awareness exercise. No data was collected.</p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function simulateEntry() {
+      const answer = document.getElementById("puzzle").value.trim();
+      if (answer !== "12") {
+        alert("Incorrect answer. Please try again.");
+        return;
+      }
+      const timestamp = new Date().toLocaleString();
+      console.log("Phishing simulation triggered at:", timestamp);
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
